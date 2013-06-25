@@ -1,8 +1,8 @@
 # PreEmptive Analytics JavaScript API
 
-PreEmptive Analytics is a service that allows you to gather information about how your application or site is used as your users interact with it, in real time. This data can be sent to different endpoints. By default, the API sends the data to the [Runtime Intelligence portal], which allows for aggregation and analysis. 
+PreEmptive Analytics is a suite of products that allows you to gather information about how your application or site is used as your users interact with it, in real time. This data can be sent to different endpoints. By default, the API sends the data to the [Runtime Intelligence portal], which allows for aggregation and analysis. 
 
-# Including Runtime Intelligence in your site
+# Including PreEmptive Analytics instrumentation in your site
 
 1. Include the API library in each page of your site or application, or in a common header file using one of the following:
 
@@ -34,7 +34,7 @@ PreEmptive Analytics is a service that allows you to gather information about ho
 # Initialization and session lifecycle
 
 ### RI.appStart( *settings*, *properties* )
-Initialize the PreEmptive Analytics API and send a session start message. Run loaded plugins' `start` functions. This function must be called before any other messages can be sent.
+Initializes the PreEmptive Analytics API and send a session start message. Run loaded plugins' `start` functions. This function must be called before any other messages can be sent.
 
 * `settings` : An object containing initialization settings. Supported keys are:
   * `companyId`  : **Required**. Your company ID string. If using the Runtime Intelligence portal, this is assigned to you.
@@ -117,7 +117,7 @@ The object used in a `key: object` property must contain a `key: value` pair in 
 
 While you are free to collect analytics data in any way and in accordance with any privacy policy you wish, allowing your users to opt-in to collecting usage information is not only standard in the industry, it's also the right thing to do for your users. The PreEmptive Analytics API supports three methods for allowing your users to opt-in or out of data collection.
 
-1. The PreEmptive Analytics API will disable data collection if the user has enabled the [Do Not Track] feature available in many modern browsers. The browser must support accessing the value of the Do Not Track preference via Javascript (currently, only IE9, Firefox 9, and Safari 5.1). If the user is using IE8+ or higher and has enabled InPrivate Filtering, data collection will also be disabled. If you wish to provide more inclusive support for the Do Not Track preference, you can capture the value of the **`DNT`** HTTP header in your server-side code and provide it to the API via one of the other two opt-out mechanisms.
+1. The PreEmptive Analytics API will disable data collection if the user has enabled the [Do Not Track] feature available in many modern browsers. The browser must support accessing the value of the Do Not Track preference via Javascript. If the user is using IE8+ or higher and has enabled InPrivate Filtering, data collection will also be disabled. If you wish to provide more inclusive support for the Do Not Track preference, you can capture the value of the **`DNT`** HTTP header in your server-side code and provide it to the API via one of the other two opt-out mechanisms.
 
 2. Set a cookie named `RI_sendDisabled` to either `0` for opt-in or `1` for opt-out. A value of `1` (for opt-in) will override the user's Do Not Track preference, if specified.
 
